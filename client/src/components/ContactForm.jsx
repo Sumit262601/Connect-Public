@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
+import { SEND_MAIL_API } from '../constant/constant';
 
 const ContactForm = () => {
     const [loading, setLoading] = useState(false);
@@ -24,7 +25,7 @@ const ContactForm = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            const response = await axios.post('https://connect-public.onrender.com/send-email', formData);
+            const response = await axios.post(`${SEND_MAIL_API}/send-email`, formData);
             toast.success('Subscription submitted successfully!', response);
 
             // Clear input fields

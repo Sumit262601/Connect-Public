@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const connectToMongo = require('./database/db');
 const nodemailer = require('nodemailer');
-const path = require('path'); // <-- Import path here
+const path = require('path');
 require('dotenv').config();
 
 // Initialize the app and set the port
@@ -50,7 +50,8 @@ app.post('/api/send-email', async (req, res) => {
           <p><strong>Phone:</strong> ${phone}</p>
           <p><strong>Address:</strong> ${address}</p>
           <p><strong>State:</strong> ${state}</p>
-          <p><strong>Pincode:</strong> ${pincode}</p> `
+          <p><strong>Pincode:</strong> ${pincode}</p>
+        `
   };
 
   try {
