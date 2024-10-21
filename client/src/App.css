@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* SCROLLBAR STYLE */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: red;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #a7a1a1;
+}
+
+*root {
+  --Primary: #F83002;
+  --Secondary: #002B5B;
+  --Netural: #FFFFFF;
+  --Text-Color: #333333;
+  --Accent: #FFD700;
+  --background: #F76C6C;
+  --red: #E43D11;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  color: var(--accent);
+  font-family: "Inria Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+/* SCROLLING ICONS */
+.scroll-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mouse {
+  height: 65px;
+  width: 30px;
+  border: 2px solid #E43D11;
+  border-radius: 15px;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.mouse-dot {
+  height: 15px;
+  width: 15px;
+  background-color: #E43D11;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: mouse-scroll-up-down 1.5s infinite;
+}
+
+@keyframes mouse-scroll-up-down {
+  0% {
+    top: 10px;
+    opacity: 1;
+  }
+
+  50% {
+    top: 35px;
+    opacity: 1;
+  }
+
+  100% {
+    top: 10px;
+    opacity: 1;
+  }
+}
+
+
+/* PAXALLAX TEXT MOTION */
+.progress {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--accent);
+  bottom: 100px;
+}
+
+.parallax {
+  overflow: hidden;
+  letter-spacing: -2px;
+  line-height: 0.8;
+  margin: 0;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.parallax .scroller {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 64px;
+  display: flex;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.parallax span {
+  display: block;
+  margin-right: 30px;
+}
