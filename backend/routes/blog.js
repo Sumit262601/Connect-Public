@@ -1,6 +1,6 @@
 const express = require('express');
-const Blog = require('../models/Blog'); // Import the Blog model
-const multer = require('multer'); // Import Multer
+const Blog = require('../models/blog');
+const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 const router = express.Router();
@@ -11,11 +11,11 @@ const uploadDir = path.join(__dirname, '../uploads');
 // Configure Multer storage
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        fs.mkdirSync(uploadDir, { recursive: true }); // Create upload directory if it doesn't exist
+        fs.mkdirSync(uploadDir, { recursive: true });
         cb(null, uploadDir);
     },
     filename: (req, file, cb) => {
-        cb(null, Date.now() + '-' + file.originalname); // Use a unique filename
+        cb(null, Date.now() + '-' + file.originalname);
     }
 });
 
