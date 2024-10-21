@@ -1,6 +1,6 @@
 import Logo from "./logo.png";
 import bgImage from "./brand.jpeg"
-import SocialImg from "./Social.png"
+import SocialImg from "./social.png"
 import About1 from "./about1.jpg"
 import About2 from "./about2.jpg"
 import About3 from "./about3.jpg"
@@ -9,7 +9,7 @@ import Logo2 from "./logo2.png"
 import AdminLogo from './admin-logo.png'
 import Public from "./public.png"
 import Design from "./designlogo.png"
-import  Social from "./social.png"
+import  Social from "./socialmedia.png"
 import SocialMedia from "./socialmedia.png"
 import Product from "./product.png"
 import Influence from "./influence.png"
