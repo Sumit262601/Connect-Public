@@ -24,7 +24,7 @@ const ContactForm = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            const response = await axios.post('http://localhost:5000/api/send-email', formData);
+            const response = await axios.post('https://connect-public.onrender.com/send-email', formData);
             toast.success('Subscription submitted successfully!', response);
 
             // Clear input fields
