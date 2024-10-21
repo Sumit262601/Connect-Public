@@ -1,6 +1,6 @@
 // ========================================================================================== //
 
-import { Design, Influence, Product, Public, Social } from "../assets"
+import { Design, Influence, Product, Public, SocialMedia } from "../assets"
 
 // ===================================== SERVICE CARD ITEMS ================================= //
 export const serviceCards = [
@@ -12,7 +12,7 @@ export const serviceCards = [
   {
     title: "Social Media",
     description: "Low engagement? Tumbleweeds blowing across your social profiles? Let’s breathe life into your social media! From crafting catchy content to building solid strategies, we turn your social profiles into engagement hubs that look aesthetic. Likes, shares, follows — we’re all about turning your audience into loyal fans.",
-    image: Social
+    image: SocialMedia
   },
   {
     title: "Design: Logo to Packaging", 

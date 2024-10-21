@@ -9,11 +9,10 @@ import Logo2 from "./logo2.png"
 import AdminLogo from './admin-logo.png'
 import Public from "./public.png"
 import Design from "./designlogo.png"
-import  Social from "./socialmedia.png"
 import SocialMedia from "./socialmedia.png"
 import Product from "./product.png"
 import Influence from "./influence.png"
 
 export {
-    Logo, bgImage, SocialImg, About1, About2, About3, MissionBanner, Logo2, AdminLogo, Public, Design, Social, SocialMedia, Product, Influence
+    Logo, bgImage, SocialImg, About1, About2, About3, MissionBanner, Logo2, AdminLogo, Public, Design, SocialMedia, Product, Influence
 }
