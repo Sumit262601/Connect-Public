@@ -1,22 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import ServiceCard from "./ServiceCard";
 import { serviceCards } from "../utils/Items";
+import { DarkModeContext } from "../context/DarkModeContext";
 
 const Service = () => {
+    const { darkMode } = useContext(DarkModeContext);
+
     return (
-        <section className="pb-12 bg-white pt-20 dark:bg-dark lg:pb-[90px] lg:pt-[120px]">
+        <section
+            className={`pb-12 pt-20 ${darkMode ? 'bg-dark' : 'bg-white'} lg:pb-[90px] lg:pt-[120px]`}
+        >
             <div className="flex flex-wrap justify-center">
                 <div className="w-full px-4">
                     <div className="mx-auto mb-12 max-w-[510px] text-center lg:mb-20">
                         <div className="flex items-center justify-center">
-                            <span className="mb-4 rounded-full block font-semibold px-10 text-primary text-[#EFB11E] ring-1 ring-gray-900/30 hover:ring-gray-900/20">
+                            <span className={`mb-4 rounded-full block font-semibold px-10 text-primary text-[#EFB11E] ${darkMode ? 'ring-1 ring-white hover:ring-white' : 'ring-1 ring-gray-900/30 hover:ring-gray-900/20'}`}>
                                 Our Services
                             </span>
                         </div>
-                        <h2 className="mb-3 text-4xl md:text-5xl font-bold leading-[1.2] text-[#BD4157] dark:text-[#E43D11]">
+                        <h2 className={`mb-3 text-4xl md:text-5xl font-bold leading-[1.2] ${darkMode ? 'text-[#ffffff]' : 'text-[#BD4157]'}`}>
                             What We Offer
                         </h2>
-                        <p className="text-base md:text-lg lg:text-xl text-body-color dark:text-[#D5536D]">
+                        <p className={`text-base md:text-lg lg:text-xl text-body-color ${darkMode ? 'text-gray-400' : 'text-[#D5536D]'}`}>
                             "Empowering Your Brand with Transparent, Innovative Solutions and Timely Results"
                         </p>
                     </div>
@@ -32,9 +37,6 @@ const Service = () => {
                     />
                 ))}
             </div>
-
-
-
         </section>
     );
 };

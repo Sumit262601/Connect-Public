@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { BsInstagram } from "react-icons/bs";
 import { FaFacebookSquare, FaTwitterSquare } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
@@ -6,8 +6,10 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import { SEND_MAIL_API } from "../constant/constant.js"
+import { DarkModeContext } from '../context/DarkModeContext.jsx';
 
 const Footer = () => {
+    const { darkMode } = useContext(DarkModeContext);
     const [formData, setFormData] = useState({
         email: '',
     });
@@ -41,7 +43,7 @@ const Footer = () => {
     return (
         <>
             <Toaster position="top-center" reverseOrder={true} />
-            <footer className="px-6 py-8 md:px-12 lg:px-20 bg-gradient-to-r from-[#24315E] to-[#374785] text-white">
+            <footer className={`px-6 py-8 md:px-12 lg:px-20 ${darkMode ? 'bg-gray-900 text-white border-t-2 ' : 'bg-gradient-to-r from-[#24315E] to-[#374785] text-white border-t-2 border-gray-900'}`} >
                 <div className="container mx-auto">
                     <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
                         {/* Subscription Section */}
@@ -52,9 +54,9 @@ const Footer = () => {
 
                             <div className="flex flex-col gap-3 w-full mt-6 space-y-4 md:space-y-0 md:flex-row">
                                 {/* Input Field */}
-                                <div className="flex items-center px-4 py-2 bg-[#EBE9E1] rounded-md text-gray-700 focus-within:ring focus-within:ring-opacity-40">
+                                <div className="flex items-center px-4 py-2 bg-[#ffffff] rounded-md text-gray-700 focus-within:ring focus-within:ring-opacity-40">
                                     <IoMail className='text-xl text-[#BD4157]' />
-                                    <input id="email" type="text" name='email' value={formData.email} onChange={handleChange} className="w-full px-2 bg-transparent outline-none" placeholder="Email Address" />
+                                    <input id="email" type="text" name='email' value={formData.email} onChange={handleChange} className="w-full px-2 bg-white outline-none" placeholder="Email Address" />
                                 </div>
                                 {/* Subscribe Button */}
                                 <button onClick={handleSubmit} className="w-full mt-4 md:mt-0 md:w-auto px-6 py-2.5 text-sm font-medium tracking-wider text-white bg-[#BD4157] rounded-lg hover:bg-opacity-80 focus:ring focus:ring-opacity-80">
@@ -94,7 +96,7 @@ const Footer = () => {
                     {/* Footer Bottom */}
                     <div className="flex flex-col items-center justify-between space-y-4 sm:space-y-0 sm:flex-row">
                         <p className='text-sm md:text-base'>
-                            <span className='text-[#F7E9A0]'>&copy;</span> Connect Publics Pvt. Ltd
+                            <span className='text-[#BD4157]'>&copy;</span> Connect Publics Pvt. Ltd
                         </p>
 
                         <div className="flex space-x-4 text-xl">

@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PageNotFound from "../pages/PageNotFound";
 import { RiDeleteBin5Fill, RiEdit2Fill } from 'react-icons/ri';
 import { UPLOAD_IMAGE_API } from '../../constant/constant';
+import { DarkModeContext } from '../../context/DarkModeContext';
 
 const BlogList = ({ blogs, onEdit, onDelete }) => {
+    const { darkMode } = useContext(DarkModeContext);
+
     return (
         <div className="mt-4">
             {blogs.length === 0 ? (
                 <PageNotFound />
             ) : (
                 blogs.map((blog) => (
-                    <div key={blog._id} className="border rounded-lg shadow-md p-4 mb-10 bg-white">
-                        <h3 className="text-xl font-semibold mb-3">{blog.title}</h3>
-                        <p className="mt-2 text-gray-700 mb-3">{blog.description}</p>
+                    <div key={blog._id} className={`border rounded-lg shadow-md p-4 mb-10 ${darkMode ? 'bg-gray-800' : 'bg-white'}`}>
+                        <h3 className={`text-xl font-semibold mb-3 ${darkMode ? 'text-gray-200' : 'text-gray-900'}`}>{blog.title}</h3>
+                        <p className={`text-base font-semibold mb-3 ${darkMode ? 'text-gray-400' : 'text-gray-700'}`}>{blog.description}</p>
                         <img
                             src={`${UPLOAD_IMAGE_API}/${blog.images}`}
                             alt="Blog Img"

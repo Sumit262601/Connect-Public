@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import Contact from './components/Contact';
 import EditBlog from './admin/components/EditBlog';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { DarkModeProvider } from './context/DarkModeContext';
 
 const App = () => {
   const appRouter = createBrowserRouter([
@@ -42,10 +43,10 @@ const App = () => {
   ]);
 
   return (
-    <>
+    <DarkModeProvider>
       <RouterProvider router={appRouter} />
-    </>
+    </DarkModeProvider>
   );
-}
+};
 
 export default App;

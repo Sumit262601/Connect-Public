@@ -25,14 +25,31 @@
   --red: #E43D11;
 }
 
+:root {
+  --bg-color-light: #ffffff;
+  --text-color-light: #000000;
+  --bg-color-dark: #1F2937;
+  --text-color-dark: #ffffff;
+  --highlight-color: #F76D6D;
+}
+
+.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(to right, #24315E, #374785);
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--background);
-  color: var(--accent);
   font-family: "Inria Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
 
 }
 
@@ -47,7 +64,7 @@ body {
 .mouse {
   height: 65px;
   width: 30px;
-  border: 2px solid #E43D11;
+  border: 2px solid #F76D6D;
   border-radius: 15px;
   position: relative;
   margin-bottom: 5px;
@@ -56,7 +73,7 @@ body {
 .mouse-dot {
   height: 15px;
   width: 15px;
-  background-color: #E43D11;
+  background-color: #F76D6D;
   border-radius: 50%;
   position: absolute;
   top: 10px;

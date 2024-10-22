@@ -7,15 +7,8 @@ import Service from './Service.jsx';
 import CtaSection from './CTSSection.jsx'
 
 const Home = () => {
-  const [mode, setMode] = useState("light");
-
-  const handleToggle = () => {
-    setMode(mode === 'light' ? 'dark' : 'light');
-  };
-
-
   return (
-    <>
+    <div >
       <Navbar />
       <HeroSection />
       <ScrollIcon />
@@ -23,7 +16,7 @@ const Home = () => {
       <CtaSection />
       <Service />
       <Footer />
-    </>
+    </div>
   )
 }
 

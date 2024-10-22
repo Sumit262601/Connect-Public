@@ -3,6 +3,7 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import { AdminLogo } from '../../assets';
 import EditForm from './EditForm';
 import Slider from './Slider';
+import Them from '../../constant/Them';
 
 const EditBlog = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -20,11 +21,14 @@ const EditBlog = () => {
                         {sidebarOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
                     </button>
                     {/* Profile image */}
-                    <img
-                        alt="profile"
-                        src={AdminLogo}
-                        className="inline-block h-10 w-10 rounded-full ring-2 ring-white"
-                    />
+                    <div className="flex items-center justify-center gap-2">
+                        <Them />
+                        <img
+                            alt="profile"
+                            src={AdminLogo}
+                            className="inline-block h-10 w-10 rounded-full ring-2 ring-white"
+                        />
+                    </div>
                 </header>
 
                 {/* Main EditBlog area */}
