@@ -58,7 +58,7 @@ const Navbar = () => {
                             </li>
                         </Link>
                     </ul>
-                    <hr className='ml-2 w-1 h-8 border-r-2 border-r-slate-400' />
+                    <hr className='ml-2 h-8 border bg-slate-400 border-slate-400' />
                     {/* Theme Toggle */}
                     <Them />
                 </div>
@@ -88,12 +88,9 @@ const Navbar = () => {
                     </ul>
                 </div>
                 {/* Hamburger menu icon */}
-                <div className="flex items-center justify-center lg:hidden gap-6">
-                    <Them />
-                    <button className='block lg:hidden z-10' onClick={handleClick}>
-                        {click ? <FaTimes size={25} className='text-white' /> : <CiMenuFries size={25} className='text-[#AD3E53]' />}
-                    </button>
-                </div>
+                <button className='block lg:hidden z-10' onClick={handleClick}>
+                    {click ? <FaTimes size={25} className='text-white' /> : <CiMenuFries size={25} className='text-[#AD3E53]' />}
+                </button>
             </div>
         </nav>
     );

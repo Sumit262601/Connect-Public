@@ -21,19 +21,20 @@ const Service = () => {
                         <h2 className={`mb-3 text-4xl md:text-5xl font-bold leading-[1.2] ${darkMode ? 'text-[#ffffff]' : 'text-[#BD4157]'}`}>
                             What We Offer
                         </h2>
-                        <p className={`text-base md:text-lg lg:text-xl text-body-color ${darkMode ? 'text-gray-400' : 'text-[#D5536D]'}`}>
+                        <p className={`text-base md:text-lg lg:text-xl text-body-color ${darkMode ? 'text-gray-400' : 'text-[#374785]'}`}>
                             "Empowering Your Brand with Transparent, Innovative Solutions and Timely Results"
                         </p>
                     </div>
                 </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-10">
+            <div className="px-10">
                 {serviceCards.map((item, index) => (
                     <ServiceCard
                         key={index}
                         title={item.title}
                         description={item.description}
                         image={item.image}
+                        reverse={index % 2 == 0}
                     />
                 ))}
             </div>

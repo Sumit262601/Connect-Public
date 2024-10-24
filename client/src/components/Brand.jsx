@@ -4,7 +4,7 @@ import { bgImage } from '../assets';
 const HeroSection = () => {
     return (
         <div
-            className="h-96 sm:h-auto p-6 sm:p-8 md:p-12 lg:p-16 xl:p-20 text-white text-center flex items-center justify-center"
+            className="h-96 sm:h-auto p-6 sm:p-32 md:p-32 lg:p-18 xl:p-32 text-white text-center flex items-center justify-center"
             style={{
                 backgroundImage: `url(${bgImage})`,
                 backgroundSize: 'cover',

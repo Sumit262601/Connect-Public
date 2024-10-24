@@ -1,20 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { DarkModeContext } from '../context/DarkModeContext';
 
-const ServiceCard = ({ title, description, image }) => {
+const ServiceCard = ({ title, description, image, reverse }) => {
+  const { darkMode } = useContext(DarkModeContext);
+
   return (
-    <div className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
-      <div className="relative h-48 sm:h-60 md:h-72 lg:h-80 xl:h-96 m-2.5 overflow-hidden text-white rounded-md">
+    <div
+      className={`flex flex-col md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} md:space-x-6 border ${darkMode ? 'border-white' : ''}
+      space-y-6 md:space-y-0 rounded-xl shadow-xl p-4 max-w-full mb-8 
+      ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}
+    >
+      <div className="w-full md:w-1/2 lg:w-2/5">
         <img
-          className="w-full h-full object-cover"
-          src={image}
+          src={image} 
           alt={title}
+          className="rounded-xl w-full h-48 md:h-64 lg:h-72 object-cover"
         />
       </div>
-      <div className="p-4">
-        <h6 className="mb-2 text-slate-800 text-lg sm:text-xl font-semibold">
-          {title}
-        </h6>
-        <p className="text-slate-600 text-sm sm:text-base leading-normal font-light">
+      <div className="w-full md:w-1/2 lg:w-3/5 flex flex-col space-y-4 p-4">
+        <h3 className="font-black text-2xl sm:text-3xl">{title}</h3>
+        <p className={`${darkMode ? 'text-slate-300' : 'text-slate-600'} text-base sm:text-lg`}>
           {description}
         </p>
       </div>

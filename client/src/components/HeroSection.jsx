@@ -9,7 +9,7 @@ const HeroSection = () => {
     <div className={`relative px-4 pt-14 lg:px-8 ${darkMode ? 'bg-dark' : 'bg-transparent'}`}>
       <div className="mx-auto max-w-2xl py-20 sm:py-32 lg:py-20">
         <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-          <div className={`relative flex gap-1 rounded-full px-3 py-1 text-sm leading-6 ${darkMode ? 'text-gray-300 ring-1 ring-gray-500 hover:ring-gray-600' : 'text-gray-600 ring-1 ring-gray-900 hover:ring-gray-900/20'}`}>
+          <div className={`relative flex gap-1 rounded-full px-3 py-1 text-sm leading-6 ${darkMode ? 'text-gray-300 ring-1 ring-gray-500 hover:ring-gray-600' : 'text-gray-600 ring-1 ring-gray-400 hover:ring-gray-900/20'}`}>
             Announcing our next Blogs.{' '}
             <Link to="/blog">
               <p className={`font-semibold ${darkMode ? 'text-white' : 'text-[#F76C6C]' }`}>
